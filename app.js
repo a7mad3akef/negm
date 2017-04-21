@@ -136,9 +136,9 @@ function sendGenericMessage(recipientId) {
       attachment: {
         type: "template",
         payload: {
-          template_type: "ahly",
+          template_type: "generic",
           elements: [{
-            title: "Al Ahly SC",
+            title: "ahly",
             subtitle: "Al Ahly the most successful club in Egyptian football history and Africa",
             item_url: "https://en.wikipedia.org/wiki/Al_Ahly_SC",               
             image_url: "http://fc05.deviantart.net/fs45/f/2009/145/a/f/ahly_flag_png_by_REDFLOOD.png",
