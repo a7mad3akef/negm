@@ -71,6 +71,10 @@ function processPostback(event) {
       var message = greeting + "My name is SP Bot. I can tell you various details regarding sports.,Would You  like to know today`s table matches?";
       sendMessage(senderId, {text: message});
     });
+  } else {
+  	  // When a postback is called, we'll send a message back to the sender to 
+  	  // let them know it was successful
+  	  sendTextMessage(senderID, "Postback called");
   }
 }
 
@@ -123,8 +127,37 @@ function receivedMessage(event) {
   }
 }
 
-function sendGenericMessage(recipientId, messageText) {
-  // To be expanded in later sections
+function sendGenericMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "ahly",
+          elements: [{
+            title: "Al Ahly SC",
+            subtitle: "Al Ahly the most successful club in Egyptian football history and Africa",
+            item_url: "https://en.wikipedia.org/wiki/Al_Ahly_SC",               
+            image_url: "http://fc05.deviantart.net/fs45/f/2009/145/a/f/ahly_flag_png_by_REDFLOOD.png",
+            buttons: [{
+              type: "web_url",
+              url: "https://en.wikipedia.org/wiki/Al_Ahly_SC",
+              title: "Open Web URL"
+            }, {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for first bubble",
+            }]
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
 }
 
 function sendTextMessage(recipientId, messageText) {
@@ -161,4 +194,5 @@ function callSendAPI(messageData) {
     }
   });  
 }
+
 
