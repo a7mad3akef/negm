@@ -121,11 +121,11 @@ function receivedMessage(event) {
 
       case 'add menu':
         addPersistentMenu();
-        break        
+        break;        
 
       case 'remove menu':
         removePersistentMenu();
-        break        
+        break;        
 
       default:
         sendTextMessage(senderID, messageText);
