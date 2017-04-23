@@ -120,11 +120,11 @@ function receivedMessage(event) {
         break;
 
       case 'add menu':
-        addPersistentMenu();
+        Menu(event);
         break;        
 
       case 'remove menu':
-        removePersistentMenu();
+        Menu(event);
         break;        
 
       default:
@@ -207,7 +207,7 @@ function callSendAPI(messageData) {
 
 function addPersistentMenu(){
  request({
-    url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
+    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
     qs: { access_token: process.env.PAGE_ACCESS_TOKEN },
     method: 'POST',
     json:{
@@ -245,7 +245,7 @@ function addPersistentMenu(){
 
 function removePersistentMenu(){
  request({
-    url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
+    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
     qs: { access_token: process.env.PAGE_ACCESS_TOKEN },
     method: 'POST',
     json:{
@@ -263,3 +263,95 @@ function removePersistentMenu(){
     }
 });
 }
+
+
+function Menu(event) {
+      callGetLocaleAPI(event, handleReceivedMessage);
+}
+
+function handleReceivedMessage(event) {
+  var senderID = event.sender.id;
+  var recipientID = event.recipient.id;
+  var timeOfMessage = event.timestamp;
+  var message = event.message;
+
+
+  
+  var messageId = message.mid;
+  var appId = message.app_id;
+  var metadata = message.metadata;
+
+  // You may get a text or attachment but not both
+  var messageText = message.text;
+  var messageAttachments = message.attachments;
+  var quickReply = message.quick_reply;
+
+  
+
+  if (messageText) {
+    
+    switch (messageText.toLowerCase()) {
+
+      case 'remove menu':
+        removePersistentMenu();
+        break        
+
+      default:
+         addPersistentMenu();
+
+    }
+  
+}
+
+function callGetLocaleAPI(event, handleReceived) {
+    var userID = event.sender.id;
+    var http = require('https');
+    var path = '/v2.6/' + userID +'?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + PAGE_ACCESS_TOKEN;
+    var options = {
+      host: 'graph.facebook.com',
+      path: path
+    };
+    
+    if(senderContext[userID])
+    {
+       firstName = senderContext[userID].firstName; 
+       lastName = senderContext[userID].lastName; 
+       console.log("found " + JSON.stringify(senderContext[userID]));
+       if(!firstName) 
+          firstName = "undefined";
+       if(!lastName) 
+          lastName = "undefined";
+       handleReceived(event);
+       return;
+    }
+
+    var req = http.get(options, function(res) {
+      //console.log('STATUS: ' + res.statusCode);
+      //console.log('HEADERS: ' + JSON.stringify(res.headers));
+
+      // Buffer the body entirely for processing as a whole.
+      var bodyChunks = [];
+      res.on('data', function(chunk) {
+        // You can process streamed parts here...
+        bodyChunks.push(chunk);
+      }).on('end', function() {
+        var body = Buffer.concat(bodyChunks);
+        var bodyObject = JSON.parse(body);
+        firstName = bodyObject.first_name;
+        lastName = bodyObject.last_name;
+        if(!firstName) 
+          firstName = "undefined";
+        if(!lastName) 
+          lastName = "undefined";
+        senderContext[userID] = {};
+        senderContext[userID].firstName = firstName;
+        senderContext[userID].lastName = lastName;
+        console.log("defined " + JSON.stringify(senderContext));
+        handleReceived(event);
+      })
+    });
+    req.on('error', function(e) {
+      console.log('ERROR: ' + e.message);
+    });
+}
+
