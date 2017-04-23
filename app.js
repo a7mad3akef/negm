@@ -207,7 +207,7 @@ function callSendAPI(messageData) {
 
 function addPersistentMenu(){
  request({
-    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: { access_token: process.env.PAGE_ACCESS_TOKEN },
     method: 'POST',
     json:{
@@ -245,7 +245,7 @@ function addPersistentMenu(){
 
 function removePersistentMenu(){
  request({
-    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
     qs: { access_token: process.env.PAGE_ACCESS_TOKEN },
     method: 'POST',
     json:{
