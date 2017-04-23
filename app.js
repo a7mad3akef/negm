@@ -233,20 +233,20 @@ function addPersistentMenu(){
     }
 
 }, function(error, response, body) {
-    console.log(response)
+    console.log(response);
     if (error) {
-        console.log('Error sending messages: ', error)
+        console.log('Error sending messages: ', error);
     } else if (response.body.error) {
-        console.log('Error: ', response.body.error)
+        console.log('Error: ', response.body.error);
     }
-})
+});
 
 }
 
 function removePersistentMenu(){
  request({
     url: 'https://graph.facebook.com/v2.6/me/thread_settings',
-    qs: { access_token: PAGE_ACCESS_TOKEN },
+    qs: { access_token: process.env.PAGE_ACCESS_TOKEN },
     method: 'POST',
     json:{
         setting_type : "call_to_actions",
@@ -255,11 +255,11 @@ function removePersistentMenu(){
     }
 
 }, function(error, response, body) {
-    console.log(response)
+    console.log(response);
     if (error) {
-        console.log('Error sending messages: ', error)
+        console.log('Error sending messages: ', error);
     } else if (response.body.error) {
-        console.log('Error: ', response.body.error)
+        console.log('Error: ', response.body.error);
     }
-})
+});
 }
