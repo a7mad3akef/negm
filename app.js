@@ -119,6 +119,14 @@ function receivedMessage(event) {
         sendGenericMessage(senderID);
         break;
 
+      case 'add menu':
+        addPersistentMenu();
+        break        
+
+      case 'remove menu':
+        removePersistentMenu();
+        break        
+
       default:
         sendTextMessage(senderID, messageText);
     }
@@ -196,3 +204,62 @@ function callSendAPI(messageData) {
 }
 
 
+
+function addPersistentMenu(){
+ request({
+    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: { access_token: process.env.PAGE_ACCESS_TOKEN },
+    method: 'POST',
+    json:{
+        setting_type : "call_to_actions",
+        thread_state : "existing_thread",
+        call_to_actions:[
+            {
+              type:"postback",
+              title:"Home",
+              payload:"home"
+            },
+            {
+              type:"postback",
+              title:"Joke",
+              payload:"joke"
+            },
+            {
+              type:"web_url",
+              title:"Latest News",
+              url:"http://www.i-see.tech/"
+            }
+          ]
+    }
+
+}, function(error, response, body) {
+    console.log(response)
+    if (error) {
+        console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+        console.log('Error: ', response.body.error)
+    }
+})
+
+}
+
+function removePersistentMenu(){
+ request({
+    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: { access_token: PAGE_ACCESS_TOKEN },
+    method: 'POST',
+    json:{
+        setting_type : "call_to_actions",
+        thread_state : "existing_thread",
+        call_to_actions:[ ]
+    }
+
+}, function(error, response, body) {
+    console.log(response)
+    if (error) {
+        console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+        console.log('Error: ', response.body.error)
+    }
+})
+}
