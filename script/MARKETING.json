@@ -1,0 +1,15 @@
+{
+      "text": "A bot is a great way to communicate business information to your potential clients.  The bot can give then options about information, for example a class schedule at a Yoga studio.  Further, a user can opt-in for more target information, for example a city could have bot notify users of upcoming local events.",
+      "quick_replies": [
+        {
+          "content_type":"text",
+          "title":"Get started!",
+          "payload":"contact"
+        },
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"Home"
+        }
+      ]
+}

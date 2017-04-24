@@ -1,0 +1,27 @@
+{
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "button",
+          "text": "This bot is a mashup of Facebook, Heroku, GitHub, JavaScript and JSON. You can make your own with no coding! This bot is partly based on an example bot by Esther Crawford and team. See Github for the code",
+          "buttons":[
+          {
+            "type": "web_url",
+            "url": "https://www.messenger.com/t/helloestherbot",
+            "title": "Esther's Robot"
+          },
+          {
+            "type": "web_url",
+            "url": "https://github.com/matthewericfisher/fb-robot",
+            "title": "Matthew's Robot source"
+          },
+          {
+            "type": "postback",
+            "title": "Home",
+            "payload": "home"
+          }
+
+           ]
+        }
+      }
+}

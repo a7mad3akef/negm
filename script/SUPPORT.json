@@ -1,0 +1,15 @@
+{
+      "text": "A customer support bot will be the standard in the coming years. The bot can guide your clients to the proper with a minimum of fuss. Support costs will be reduced along with client wait times.",
+      "quick_replies": [
+        {
+          "content_type":"text",
+          "title":"Get started!",
+          "payload":"contact"
+        },
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"Home"
+        }
+      ]
+}

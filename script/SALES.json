@@ -1,0 +1,15 @@
+{
+      "text": "A bot can display your merchandise and even take payments. A bot can be a whole new sales channel for your business!",
+      "quick_replies": [
+        {
+          "content_type":"text",
+          "title":"Get started!",
+          "payload":"contact"
+        },
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"Home"
+        }
+      ]
+}

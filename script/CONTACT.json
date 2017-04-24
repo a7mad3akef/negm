@@ -1,0 +1,33 @@
+{
+      "attachment": {
+        "type": "template",
+        "payload": {
+         "template_type": "generic",
+          "elements": [
+          {
+            "title": "Contact",
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/canphone.png",
+            "buttons": [
+            {
+              "type": "postback",
+              "title": "Send a message",
+              "payload": "Send a message"
+            },
+            {
+              "type": "web_url",
+              "url": "http://www.dynamic-memory.com/",
+              "title": "DMS Software website"
+            },
+            {
+              "type": "postback",
+              "title": "Get email address",
+              "payload": "Get email address"
+            }
+            ]
+          }
+          ]
+      }
+   }
+}
+
+

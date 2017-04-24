@@ -1,0 +1,26 @@
+{
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "button",
+          "text": "Matthew wrote this bot himself for fun and profit. Simple personal bots are available free from ChatFuel.com.  If you would like helping setting up a ChatFull bot or a Custom bot, please contact DMS Software, dynamic-memory.com.  You can customize this Bot using this Bot! Just hit Customize to get started.",
+          "buttons":[
+          {
+            "type": "postback",
+            "title": "Customize this bot",
+            "payload": "custom"
+          },
+          {
+            "type": "web_url",
+            "url": "http://www.dynamic-memory.com",
+            "title": "DMS Software"
+          },
+          {
+            "type": "postback",
+            "title": "Home",
+            "payload": "home"
+          }
+           ]
+        }
+      }
+    }

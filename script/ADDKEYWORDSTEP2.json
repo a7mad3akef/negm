@@ -1,0 +1,10 @@
+{
+      "text": "The new keyword must be associated with a template, only text is currently supported.",
+      "quick_replies": [
+        {
+          "content_type":"text",
+          "title":"Text",
+          "payload":"ADDKEYWORD_TEXT"
+        }
+      ]
+}

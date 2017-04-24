@@ -1,0 +1,19 @@
+{
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "button",
+          "text": "Select action",
+          "buttons":[{
+            "type": "postback",
+            "title": "Add new keyword",
+            "payload": "add keyword"
+          }, {
+            "type": "postback",
+            "title": "List keywords",
+            "payload": "list keywords"
+          }]
+        }
+      }
+}
+

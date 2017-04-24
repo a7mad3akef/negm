@@ -1,0 +1,30 @@
+{
+      "text": "Thanks for your interest. Matthew has had a great software career. What would you like to know?",
+      "quick_replies": [
+        {
+          "content_type":"text",
+          "title":"Education",
+          "payload":"Education"
+        },
+        {
+          "content_type":"text",
+          "title":"Software",
+          "payload":"software"
+        },
+        {
+          "content_type":"text",
+          "title":"Languages",
+          "payload":"languages"
+        },
+        {
+          "content_type":"text",
+          "title":"Architecture",
+          "payload":"architecture"
+        },
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"home"
+        }
+      ]
+}
