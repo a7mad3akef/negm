@@ -1,0 +1,20 @@
+{
+      "text": "A button template may have up to three buttons.  How many would you like?",
+      "quick_replies": [
+        {
+          "content_type":"text",
+          "title":"One",
+          "payload":"ADDKEYWORD_BUTTON1"
+        },
+        {
+          "content_type":"text",
+          "title":"Two",
+	  "payload":"ADDKEYWORD_BUTTON2"
+        },
+        {
+          "content_type":"text",
+          "title":"Three",
+	  "payload":"ADDKEYWORD_BUTTON3"
+        }
+      ]
+}

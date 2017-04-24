@@ -1,0 +1,25 @@
+{
+      "text": "Your business can benefit from having a bot like this one.  The bot can be an effective customer contact tool for marketing, sales and customer support.  You can increase profits and lower costs by engaging with your customers on a more personalized basis with a bot.",
+      "quick_replies": [
+        {
+          "content_type":"text",
+          "title":"Marketing",
+          "payload":"marketing"
+        },
+        {
+          "content_type":"text",
+          "title":"Sales",
+          "payload":"sales"
+        },
+        {
+          "content_type":"text",
+          "title":"Customer Support",
+          "payload":"support"
+        },
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"Home"
+        }
+      ]
+}

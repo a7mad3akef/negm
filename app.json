@@ -1,0 +1,20 @@
+{
+  "name": "DMS Software Bot",
+  "description": "An example Facebook Bot.",
+  "repository": "https://github.com/matthewericfisher/fb-robot",
+  "logo": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/icon.png",
+  "env": {
+    "APP_SECRET": {
+      "description": "The App Secret from the Facebook Settings page",
+      "required": true
+    },
+    "PAGE_ACCESS_TOKEN": {
+      "description": "Page Access Token from the Facebook Messenger Settings page",
+      "required": true
+    },
+    "VALIDATION_TOKEN": {
+      "description": "Validation Token from Facebook Webhooks setup page.  If you forget this, you must +Add Product and select Webhooks",
+      "required": true
+    }
+  }
+}

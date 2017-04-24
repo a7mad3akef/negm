@@ -1,0 +1,30 @@
+{
+      "text": "Effective Software Engineering focuses on industrial systems where nothing is ever perfect. Time is short, human resources are missing, existing software is broken, etc. The Effective Software Engineer works within these business constraints to deliver the best solutions possible.",
+      "quick_replies": [
+        {
+          "content_type":"text",
+          "title":"Education",
+          "payload":"Education"
+        },
+        {
+          "content_type":"text",
+          "title":"Software",
+          "payload":"Software"
+        },
+        {
+          "content_type":"text",
+          "title":"Languages",
+          "payload":"Languages"
+        },
+        {
+          "content_type":"text",
+          "title":"Architecture",
+          "payload":"Architecture"
+        },
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"Home"
+        }
+      ]
+}
