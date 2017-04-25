@@ -3,12 +3,12 @@
         "type": "template",
         "payload": {
           "template_type": "button",
-          "text": "This is the personal assistant bot for Matthew Fisher, CEO of DMS Software.  You can found out more about DMS Software, bots and other cool stuff.  Type 'home' at anytime to start again",
+          "text": "ازيك يا نجم زز البوت ده صاحبك الآلى بتاع الكورة هأسهل عليك الدنيا ف انك تتابع أى حاجة بتحبها وأمنى نبقى صحاب بجد",
           "buttons":[
           {
             "type": "postback",
-            "title": "Home",
-            "payload": "home"
+            "title": "نبدأ",
+            "payload": "فرقك المضلة ايه ؟"
           }
 
            ]
