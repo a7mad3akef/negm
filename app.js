@@ -630,7 +630,7 @@ console.log("sendCustoMessage "+ messageText);
 }
 
 function sendJsonMessage(recipientId,keyword) {
-console.log("sendJsonMessage " + keyword);
+  console.log("sendJsonMessage " + keyword);
   if (_.has(scriptRules, keyword.toUpperCase())) {
       sendSingleJsonMessage(recipientId,scriptRules[keyword.toUpperCase()]);
   }
@@ -828,10 +828,10 @@ function sendGenericMessage(recipientId) {
          "template_type": "generic",
           "elements": [
           {
-            "title": "Bots",
-            "subtitle": "The rise of the Facebook Bot!",
-            "item_url": "http://www.dynamic-memory.com/",               
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/robot.png",
+            "title": "iSee",
+            "subtitle": "Mobile app for visually impaired persons!",
+            "item_url": "http://i-see.tech/",               
+            "image_url": "http://i-see.tech/images/rsz_1logo.png",
             "buttons": [
             {
               "type": "postback",
