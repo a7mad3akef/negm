@@ -475,7 +475,7 @@ function sendAudioMessage(recipientId) {
       attachment: {
         type: "audio",
         payload: {
-          url: "http://messengerdemo.parseapp.com/audio/sample.mp3"
+          url: "http://www.fernbank.edu/Birding/bird_sounds/kingfisher.mp3"
         }
       }
     }
