@@ -246,7 +246,7 @@ function handleReceivedMessage(event) {
     // the text we received.
     switch (messageText.toLowerCase()) {
       case 'image':
-        sendImageMessage(senderID, "http://messengerdemo.parseapp.com/img/rift.png");
+        sendImageMessage(senderID, "http://i-see.tech/images/rsz_1logo.png");
         break;
 
       case 'gif':
