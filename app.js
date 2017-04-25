@@ -16,7 +16,8 @@ const
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),  
-  request = require('request');
+  request = require('request'),
+  mongoose = require('mongoose');
 
 var fs = require('fs');
 
@@ -57,6 +58,22 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN)) {
   console.error("Missing config values");
   process.exit(1);
 }
+
+// Connect to the database
+mongoose.connect('mongodb://admin:admin@ds117821.mlab.com:17821/negm')
+
+// Create a schema
+var userSchema = new mongoose.Schema({
+  uname : String
+});
+
+// create a model 
+var userName = mongoose.model('userName',userSchema);
+
+var userOne = userName({uname: '3akef'}).save(function(err){
+  if (err) throw err ;
+  console.log('username saved');
+});
 
 /*
  * Use your own validation token. Check that the token used in the Webhook 
