@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://source.developers.google.com/p/messenger-get-started/r/default"
   },
-  "author": "3akef",
+  "author": "3akef&3bdallah",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
