@@ -691,8 +691,9 @@ function sendTextMessage(recipientId, messageText) {
  function sendOnTime() {
     (function loop() {
         var now = new Date();
-        if (now.getHours() === 8 && now.getMinutes() === 35) {
-            sendTextMessage(1016137398486466,'hi');
+        if (now.getHours() === 8 && now.getMinutes() === 55) {
+            console.log('now iam working' )
+            sendTextMessage(183564225493868,'hi');
         }
         now = new Date();                  // allow for time passing
         var delay = 60000 - (now % 60000); // exact ms to next minute interval
