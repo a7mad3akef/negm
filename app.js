@@ -684,6 +684,15 @@ function sendTextMessage(recipientId, messageText) {
 }
 
 /*
+ * send message in specific time to me  
+ *
+ *
+ */
+var date = new Date;
+console.log('the hour is ' + now.getHours() + ' and the minute is ' + now.getMinutes());
+
+
+/*
  * Send a Joke with Quick Reply buttons.
  *
  */
