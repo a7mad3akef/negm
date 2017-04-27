@@ -344,8 +344,9 @@ function handleReceivedMessage(event) {
 
     }
   } else if (messageAttachments) {
-    if(messageAttachments[0].payload.url)
-        sendJsonMessage(senderID, messageAttachments[0].payload.url);
+    sendImageMessage(senderID, "http://i-see.tech/images/rsz_1logo.png");
+    // if(messageAttachments[0].payload.url)
+    //     sendJsonMessage(senderID, messageAttachments[0].payload.url);
   }
 }
 
