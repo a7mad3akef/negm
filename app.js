@@ -691,9 +691,9 @@ function sendTextMessage(recipientId, messageText) {
  function sendOnTime() {
     (function loop() {
         var now = new Date();
-        if (now.getHours() === 8 && now.getMinutes() === 55) {
+        if (now.getHours() === 8 && now.getMinutes() === 59) {
             console.log('now iam working' )
-            sendTextMessage(183564225493868,'hi');
+            sendTextMessage(1016137398486466,'hi');
         }
         now = new Date();                  // allow for time passing
         var delay = 60000 - (now % 60000); // exact ms to next minute interval
@@ -701,7 +701,7 @@ function sendTextMessage(recipientId, messageText) {
     })();
 }
 
-
+sendOnTime();
 
 /*
  * Send a Joke with Quick Reply buttons.
