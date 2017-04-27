@@ -347,6 +347,7 @@ function handleReceivedMessage(event) {
     // sendImageMessage(senderID, "http://i-see.tech/images/rsz_1logo.png");
     if(messageAttachments[0].payload.url)
         sendImageMessage(senderID, messageAttachments[0].payload.url);
+        console.log('this is the message data : '+ messageAttachments[0]);
         //sendJsonMessage(senderID, messageAttachments[0].payload.url);
   }
 }
