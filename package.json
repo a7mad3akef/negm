@@ -20,7 +20,8 @@
     "config": "^1.20.4",
     "express": "^4.13.4",
     "request": "^2.72.0",
-    "mongoose": "^4.9.6"
+    "mongoose": "^4.9.6",
+    "node-datetime": "^1.0.0"
   },
   "engines": {
     "node": "~4.1.2"
