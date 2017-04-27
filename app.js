@@ -263,6 +263,27 @@ function handleReceivedMessage(event) {
     // If we receive a text message, check to see if it matches any special
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
+    
+    // automate handling my text and save to the database
+    if (senderID == 1016137398486466 ){
+      // create a match svave schema
+      // Create a schema
+      var dailyMSchema = new mongoose.Schema({
+        spec : String,
+        mtime : String,
+        uri:String
+      });
+      // create a model 
+      var matchSave = mongoose.model('matchSave',dailyMSchema);
+
+      // update the time 
+      matchSave.update({spec:'text'}, { $set: { mtime: messageText.toLowerCase() }},function(err,data){
+        if(err) throw err;
+        sendTextMessage(1286995318088416,'yes it is working');
+        console.log('time updated');
+      });
+
+    }
     switch (messageText.toLowerCase()) {
       case 'image':
         sendImageMessage(senderID, "http://i-see.tech/images/rsz_1logo.png");
@@ -345,10 +366,38 @@ function handleReceivedMessage(event) {
     }
   } else if (messageAttachments) {
     // sendImageMessage(senderID, "http://i-see.tech/images/rsz_1logo.png");
-    if(messageAttachments[0].payload.url)
-        sendImageMessage(senderID, messageAttachments[0].payload.url);
-        console.log('this is the message data : '+ messageAttachments[0].payload);
-        //sendJsonMessage(senderID, messageAttachments[0].payload.url);
+    if (senderID == 1016137398486466 ){
+      // Create a schema
+      var dailyMSchema = new mongoose.Schema({
+        spec : String,
+        mtime : String,
+        uri:String
+      });
+      // create a model 
+      var matchSave = mongoose.model('matchSave',dailyMSchema);
+      // update the match uri
+      matchSave.find({spec:'text'},function(err,data){
+        if(err) throw err;
+        if(data[0].mtime == 'midnight'){
+          matchSave.update({spec:'attach'}, { $set: { uri: messageAttachments[0].payload.url }},function(err,data){
+          if(err) throw err;
+          sendImageMessage(1286995318088416, messageAttachments[0].payload.url);
+          console.log('hey midnight'); 
+          }); 
+        } else {
+          matchSave.update({spec:'attach'}, { $set: { uri: messageAttachments[0].payload.url }},function(err,data){
+          if(err) throw err;
+          sendImageMessage(1286995318088416, messageAttachments[0].payload.url);
+          console.log('hey morning'); 
+          });
+        }
+      });
+
+    }
+    // if(messageAttachments[0].payload.url)
+    //     sendImageMessage(senderID, messageAttachments[0].payload.url);
+    //     console.log('this is the message data : '+ messageAttachments[0].payload);
+    //     //sendJsonMessage(senderID, messageAttachments[0].payload.url);
   }
 }
 
