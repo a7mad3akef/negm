@@ -688,8 +688,18 @@ function sendTextMessage(recipientId, messageText) {
  *
  *
  */
-var now = new Date;
-console.log('the hour is ' + now.getHours() + ' and the minute is ' + now.getMinutes());
+ function sendOnTime() {
+    (function loop() {
+        var now = new Date();
+        if (now.getHours() === 8 && now.getMinutes() === 35) {
+            sendTextMessage(1016137398486466,'hi');
+        }
+        now = new Date();                  // allow for time passing
+        var delay = 60000 - (now % 60000); // exact ms to next minute interval
+        setTimeout(loop, delay);
+    })();
+}
+
 
 
 /*
