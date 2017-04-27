@@ -688,7 +688,7 @@ function sendTextMessage(recipientId, messageText) {
  *
  *
  */
-var date = new Date;
+var now = new Date;
 console.log('the hour is ' + now.getHours() + ' and the minute is ' + now.getMinutes());
 
 
