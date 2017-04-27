@@ -691,14 +691,11 @@ function sendTextMessage(recipientId, messageText) {
  function sendOnTime() {
     (function loop() {
         var now = new Date();
-        if (now.getHours() === 11 && now.getMinutes() === 43) {
+        if (now.getHours() === 11 && now.getMinutes() === 44) {
             console.log('here we are in the morning' );
             sendImageMessage(1286995318088416, "http://i-see.tech/images/rsz_1logo.png");
             sendTextMessage(1286995318088416,'ايه يا نجم مش هنشوف مصالحنا بقى');
-        } else if(now.getHours() === 22 && now.getMinutes() === 0) {
-            console.log('here we are in the midnight');
-
-        }
+        } 
         now = new Date();                  // allow for time passing
         var delay = 60000 - (now % 60000); // exact ms to next minute interval
         setTimeout(loop, delay);
