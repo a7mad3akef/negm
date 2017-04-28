@@ -279,7 +279,7 @@ function handleReceivedMessage(event) {
       // update the time
       matchSave.update({spec:'text'}, { $set: { mtime: messageText.toLowerCase() }},function(err,data){
         if(err) throw err;
-        sendTextMessage(1286995318088416,'yes it is working');
+        //sendTextMessage(1286995318088416,'yes it is working');
         console.log('time updated');
       });
 
@@ -382,13 +382,13 @@ function handleReceivedMessage(event) {
         if(data[0].mtime == 'midnight'){
           matchSave.update({spec:'attach'}, { $set: { uri: messageAttachments[0].payload.url }},function(err,data){
           if(err) throw err;
-          sendImageMessage(1286995318088416, messageAttachments[0].payload.url);
+          //sendImageMessage(1286995318088416, messageAttachments[0].payload.url);
           console.log('hey midnight'); 
           }); 
         } else {
           matchSave.update({spec:'attach'}, { $set: { uri: messageAttachments[0].payload.url }},function(err,data){
           if(err) throw err;
-          sendImageMessage(1286995318088416, messageAttachments[0].payload.url);
+          //sendImageMessage(1286995318088416, messageAttachments[0].payload.url);
           console.log('hey morning'); 
           });
         }
