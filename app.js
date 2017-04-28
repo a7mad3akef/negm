@@ -279,7 +279,7 @@ function handleReceivedMessage(event) {
       // update the time
       matchSave.update({spec:'text'}, { $set: { mtime: messageText.toLowerCase() }},function(err,data){
         if(err) throw err;
-        //sendTextMessage(1286995318088416,'yes it is working');
+        sendTextMessage(1674180459261975,'yes it is working');
         console.log('time updated');
       });
 
