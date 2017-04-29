@@ -335,7 +335,8 @@ function handleReceivedMessage(event) {
 
       case 'user info':
         if(firstName)
-            sendTextMessage(senderID,firstName);
+            // sendTextMessage(senderID,firstName);
+          sendTextMessage(senderID,'thanks');
         break        
 
       case 'add menu':
