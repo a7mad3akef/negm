@@ -68,33 +68,45 @@ function sendOnTime() {
     (function loop() {
         var now = new Date();
 
-        if (now.getHours() === 17 && now.getMinutes() === 8) {
+        if (now.getHours() === 18 && now.getMinutes() === 11) {
             console.log('morning');
 
             matchSave.find({mtime:'morning'},function(err,data){
               if(err) throw err; 
               var path = data[0].uri
-              userName.find({},function(err,data){
+              var stream = userName.find().stream();
 
-              if(err) throw err;
-              data[0].uid.forEach(function(item){
-                sendImageMessage(item,path);
+              stream.on('data', function (doc) {
+                sendImageMessage(doc.uid,path);
+              }).on('error', function (err) {
+                // handle the error
+              }).on('close', function () {
+                // the stream is closed
               });
-            });
+
+            //   userName.find({},function(err,data){
+
+            //   if(err) throw err;
+            //   data[0].uid.forEach(function(item){
+            //     sendImageMessage(item,path);
+            //   });
+            // });
             });
             
-        } else if (now.getHours() === 17 && now.getMinutes() === 10) {
+        } else if (now.getHours() === 18 && now.getMinutes() === 13) {
           console.log('midnight');
-           matchSave.find({mtime:'midnight'},function(err,data){
+            matchSave.find({mtime:'midnight'},function(err,data){
               if(err) throw err; 
               var path = data[0].uri
-              userName.find({},function(err,data){
+              var stream = userName.find().stream();
 
-              if(err) throw err;
-              data[0].uid.forEach(function(item){
-                sendImageMessage(item,path);
+              stream.on('data', function (doc) {
+                sendImageMessage(doc.uid,path);
+              }).on('error', function (err) {
+                // handle the error
+              }).on('close', function () {
+                // the stream is closed
               });
-            });
             });
         }
         now = new Date();                  // allow for time passing
