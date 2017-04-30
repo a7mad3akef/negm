@@ -291,6 +291,16 @@ function handleReceivedMessage(event) {
           if(err) throw err;
           console.log('item updated')
         });
+      } else {
+        matchFollow.find({spec:'mflag'},function(err,data){
+          matchFollow.find({teamId:data[0].flag},function(err,data){
+            if(err) throw err;
+            console.log(data[0].teamFollowers);
+            data[0].teamFollowers.forEach(function(item){
+              console.log(item)
+            });
+          }); 
+        }); 
       }
     }
 
