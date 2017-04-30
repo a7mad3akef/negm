@@ -44,6 +44,64 @@ var followSchema = new mongoose.Schema({
 var matchFollow = mongoose.model('matchFollow',followSchema);
 
 
+// Create a schema
+var dailyMSchema = new mongoose.Schema({
+  spec : String,
+  mtime : String,
+  uri:String,
+  
+});
+
+// create a model 
+var matchSave = mongoose.model('matchSave',dailyMSchema);
+
+// Create a schema
+var userSchema = new mongoose.Schema({
+  uname : String,
+  uid: Number
+});
+
+var userName = mongoose.model('userName',userSchema);
+
+
+function sendOnTime() {
+    (function loop() {
+        var now = new Date();
+
+        if (now.getHours() === 17 && now.getMinutes() === 6) {
+            console.log('morning');
+
+            matchSave.find({mtime:'morning'},function(err,data){
+              if(err) throw err; 
+              var path = data[0].uri
+              userName.find({},function(err,data){
+
+              if(err) throw err;
+              data[0].uid.forEach(function(item){
+                sendImageMessage(item,path);
+              });
+            });
+            });
+            
+        } else if (now.getHours() === 17 && now.getMinutes() === 10) {
+          console.log('midnight');
+           matchSave.find({mtime:'midnight'},function(err,data){
+              if(err) throw err; 
+              var path = data[0].uri
+              userName.find({},function(err,data){
+
+              if(err) throw err;
+              data[0].uid.forEach(function(item){
+                sendImageMessage(item,path);
+              });
+            });
+            });
+        }
+        now = new Date();                  // allow for time passing
+        var delay = 60000 - (now % 60000); // exact ms to next minute interval
+        setTimeout(loop, delay);
+    })();
+}
 
 
 
