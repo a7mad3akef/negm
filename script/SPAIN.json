@@ -1,0 +1,16 @@
+{
+	      "text": "اختر فريقك",
+	      "quick_replies": [
+	        {
+	          "content_type":"text",
+	          "title":"برشلونه",
+	          "payload":"FC Barcelona"
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"ريال مدريد  http://1.bp.blogspot.com/-BH-PbzRq5K0/U58Uhx0TuWI/AAAAAAAAJb4/mNpyTgGDiUU/s1600/Real-Madrid.png",
+	          "payload":"Real Madrid C.F."
+	        }
+          
+	      ]
+	    }

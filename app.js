@@ -63,6 +63,15 @@ var userSchema = new mongoose.Schema({
 
 var userName = mongoose.model('userName',userSchema);
 
+// create the schema for the userFavTeam
+var favTeamSchem = new mongoose.Schema({
+  teamName : String,
+  teamFans :[]
+});
+
+// create the model 
+var favTeam = mongoose.model('favTeam',favTeamSchem);
+
 
 function sendOnTime() {
     (function loop() {
@@ -617,6 +626,8 @@ function sendEnteredMessage(recipientId) {
   sendTextMessage(recipientId, messageText);
 }
 
+
+
 function sendCustomMessage(recipientId,messageText) {
 
 console.log("sendCustoMessage "+ messageText);
@@ -629,7 +640,44 @@ console.log("sendCustoMessage "+ messageText);
 
       case 'home':
         sendGenericMessage(recipientId);
-        break        
+        break
+
+      case 'clubs':
+        sendSingleJsonMessage(recipientId,"CLUBS.json");
+        break
+
+
+
+      case 'egypt':
+        sendSingleJsonMessage(recipientId,"EGYPT.json");
+        break
+      
+      case 'saudi':
+        sendSingleJsonMessage(recipientId,"SAUDI.json");
+        break
+
+      case 'england':
+        sendSingleJsonMessage(recipientId,"ENGLAND.json");
+        break
+
+      case 'spain':
+        sendSingleJsonMessage(recipientId,"SPAIN.json");
+        break
+
+      case 'germany':
+        sendSingleJsonMessage(recipientId,"GERMANY.json");
+        break
+
+      case 'italy':
+        sendSingleJsonMessage(recipientId,"ITALY.json");
+        break
+
+      case 'france':
+        sendSingleJsonMessage(recipientId,"FRANCE.json");
+        break
+
+
+
 
       case 'follow':
         // sendSingleJsonMessage(recipientId,"MATCH.json");
@@ -642,12 +690,27 @@ console.log("sendCustoMessage "+ messageText);
         break
 
 
+
+
       default:
-         sendJsonMessage(recipientId,messageText);
+         followTeam(recipientId,messageText);
+         sendSingleJsonMessage(recipientId,"CHOOSE.json");
+
 
     }
     previousMessageHash[recipientId] = messageText.toLowerCase();
 }
+
+
+function followTeam(recipientId,messageText) {
+  console.log("user followed a team" + messageText);
+  // save the teams
+  favTeam.update({teamName: messageText }, { $push: { teamFans: recipientId }},function(err,data){
+    if(err) throw err;
+    console.log('team fan added to database')
+    } );
+
+ } 
 
 
 function sendJsonMessage(recipientId,keyword) {

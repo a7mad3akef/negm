@@ -1,0 +1,16 @@
+{
+	      "text": "اختر فريقك",
+	      "quick_replies": [
+	        {
+	          "content_type":"text",
+	          "title":"اتحاد جدة",
+	          "payload":"Al-Ahli SC"
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"اهلي جدة",
+	          "payload":"Ittihad FC"
+	        }
+          
+	      ]
+	    }

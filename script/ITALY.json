@@ -1,0 +1,26 @@
+{
+	      "text": "اختر فريقك",
+	      "quick_replies": [
+	        {
+	          "content_type":"text",
+	          "title":"يوفينتوس",
+	          "payload":"Juventus F.C."
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"روما",
+	          "payload":"A.S. Roma"
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"ميلان",
+	          "payload":"A.C. Milan"
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"الانتر",
+	          "payload":"Inter Milan"
+	        }
+          
+	      ]
+	    }

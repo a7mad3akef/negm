@@ -1,0 +1,36 @@
+{
+	      "text": "اختر فريقك",
+	      "quick_replies": [
+	        {
+	          "content_type":"text",
+	          "title":"شيلسي ",
+	          "payload":"Chelsea F.C."
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"مانشيستر يونايتد",
+	          "payload":"Manchester United F.C."
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"ارسنال",
+	          "payload":"Arsenal F.C."
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"ليفربول",
+	          "payload":"Liverpool F.C."
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"مانشيستر سيتي",
+	          "payload":"Manchester City F.C."
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"توتنهام",
+	          "payload":"Tottenham Hotspur F.C."
+	        }
+          
+	      ]
+	    }

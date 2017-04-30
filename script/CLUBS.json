@@ -1,0 +1,41 @@
+{
+	      "text": "اختر الدوري الذي فيه فريقك",
+	      "quick_replies": [
+	        {
+	          "content_type":"text",
+	          "title":"الدوري المصري",
+	          "payload":"egypt"
+	        },
+	        {
+              "content_type":"text",
+              "title":"الدوري السعودي",
+              "payload":"saudi"
+            },
+	        {
+	          "content_type":"text",
+	          "title":"الدوري الاسباني",
+	          "payload":"spain"
+	        },
+            {
+              "content_type":"text",
+              "title":"الدوري الانجليزي",
+              "payload":"england"
+            },
+            {
+              "content_type":"text",
+              "title":"الدوري الالماني",
+              "payload":"germany"
+            },
+            {
+              "content_type":"text",
+              "title":"الدوري الايطالي",
+              "payload":"italy"
+            },
+            {
+              "content_type":"text",
+              "title":"الدوري الفرنسي",
+              "payload":"france"
+            }
+            
+	      ]
+	    }

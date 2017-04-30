@@ -1,0 +1,16 @@
+{
+	      "text": "هل تتابع االمزيد من الفرق ؟",
+	      "quick_replies": [
+	        {
+	          "content_type":"text",
+	          "title":"اختر فريق اخر",
+	          "payload":"clubs"
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"يكفي",
+	          "payload":"home"
+	        }
+          
+	      ]
+	    }

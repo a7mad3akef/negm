@@ -1,0 +1,16 @@
+{
+	      "text": "اختر فريقك",
+	      "quick_replies": [
+	        {
+	          "content_type":"text",
+	          "title":"بايرن ميونخ",
+	          "payload":"FC Bayern Munich"
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"دورتموند",
+	          "payload":"Borussia Dortmund"
+	        }
+          
+	      ]
+	    }

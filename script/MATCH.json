@@ -1,0 +1,35 @@
+{
+      "attachment": {
+        "type": "template",
+        "payload": {
+         "template_type": "generic",
+          "elements": [
+          {
+            "title": "الريال vs برشلونه",
+            "subtitle": "الدوري الاسباني",
+            "item_url": "http://i-see.tech/",               
+            "image_url": "http://www.koras7.com/wp-content/uploads/2015/11/koras712.jpg",
+            "buttons": [
+            {
+              "type": "postback",
+              "title": "تابع بالتفاصيل",
+              "payload": "match"
+            },
+            {
+              "type": "postback",
+              "title": "تابع",
+              "payload": "follow"
+            },
+            {
+              "type": "postback",
+              "title": "الرئيسية",
+              "payload": "home"
+            }
+            ]
+          }
+          ]
+        }
+      }
+    }
+
+

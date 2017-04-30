@@ -1,0 +1,16 @@
+{
+	      "text": "اختر فريقك",
+	      "quick_replies": [
+	        {
+	          "content_type":"text",
+	          "title":"باريس سان جيرمان",
+	          "payload":"Paris Saint-Germain F.C."
+	        },
+	        {
+	          "content_type":"text",
+	          "title":"ليون",
+	          "payload":"Olympique Lyonnais"
+	        }
+          
+	      ]
+	    }
