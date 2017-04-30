@@ -740,6 +740,8 @@ function sendLiveData(recipientId, messageText){
 }
 
 
+
+
 /*
  * Send a text message using the Send API.
  *
@@ -761,6 +763,11 @@ function sendTextMessage(recipientId, messageText) {
             "content_type":"text",
             "title":"الرئيسية",
             "payload":"home"
+          },
+          {
+            "content_type":"text",
+            "title":"تابع فريق",
+            "payload":"clubs"
           }
         ]
       }
@@ -768,6 +775,7 @@ function sendTextMessage(recipientId, messageText) {
 
   callSendAPI(messageData);
 }
+
 
 
 /*
