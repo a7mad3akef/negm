@@ -22,7 +22,6 @@ var fs = require('fs');
 
 const _ = require('lodash');
 const   scriptRules = require('./script.json');
-const   jokes = require('./script/JOKES.json');
 
 
 var previousMessageHash = {};
