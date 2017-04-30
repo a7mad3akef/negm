@@ -282,6 +282,7 @@ function handleReceivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     if (senderID == 1016137398486466 ){
+      function isNumber(obj) { return !isNaN(parseFloat(obj)) }
       var type = isNumber(messageText.toLowerCase());
       var numberedMsg = Number(messageText.toLowerCase());
       if ( type ) {
