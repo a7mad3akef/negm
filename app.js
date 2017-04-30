@@ -295,9 +295,9 @@ function handleReceivedMessage(event) {
         matchFollow.find({spec:'mflag'},function(err,data){
           matchFollow.find({teamId:data[0].flag},function(err,data){
             if(err) throw err;
-            console.log(data[0].teamFollowers);
+            //console.log(data[0].teamFollowers);
             data[0].teamFollowers.forEach(function(item){
-              console.log(item)
+              sendLiveData(item,messageText);
             });
           }); 
         }); 
@@ -592,6 +592,21 @@ function sendJsonMessage(recipientId,keyword) {
       sendSingleJsonMessage(recipientId,"HOME.json");
   }
 }
+
+function sendLiveData(recipientId, messageText){
+  var messageData = {
+      recipient: {
+        id: recipientId
+      },
+      message: {
+        text: messageText,
+       
+      }
+    };
+
+  callSendAPI(messageData);
+}
+
 
 /*
  * Send a text message using the Send API.
