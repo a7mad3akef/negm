@@ -68,7 +68,7 @@ function sendOnTime() {
     (function loop() {
         var now = new Date();
 
-        if (now.getHours() === 17 && now.getMinutes() === 6) {
+        if (now.getHours() === 17 && now.getMinutes() === 8) {
             console.log('morning');
 
             matchSave.find({mtime:'morning'},function(err,data){
@@ -103,7 +103,7 @@ function sendOnTime() {
     })();
 }
 
-
+sendOnTime();
 
 //save match id
 // var saveMatchFollowers = matchFollow({teamId:4,teamFollowers:[]}).save(function(err){
