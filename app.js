@@ -387,6 +387,10 @@ function handleReceivedMessage(event) {
     switch (messageText.toLowerCase()) {
       
 
+      case 'hello';
+        sendTextMessage(senderID, "Hello dear");
+        break;
+
       case 'match1':
         sendSingleJsonMessage(senderID,"MATCH1.json");
         break;
@@ -819,97 +823,12 @@ function sendGenericMessage(recipientId) {
          "template_type": "generic",
           "elements": [
           {
-            "title": "iSee",
-            "subtitle": "Mobile app for visually impaired persons!",
-            "item_url": "http://i-see.tech/",               
-            "image_url": "http://i-see.tech/images/rsz_1logo.png",
-            "buttons": [
-            {
-              "type": "postback",
-              "title": "What is this Bot?",
-              "payload": "What is this Robot?"
-            },
-            {
-              "type": "postback",
-              "title": "Your Business Bot",
-              "payload": "business"
-            },
-            {
-              "type": "postback",
-              "title": "I want a Bot!",
-              "payload": "I want one"
-            }
-            ]
-          }, 
-          {
-            "title": "Generic",
-            "subtitle": "Software Engineering is awesome",
-            "item_url": "http://www.dynamic-memory.com/",               
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/evolution.png",
-            "buttons": [
-            {
-              "type": "postback",
-              "title": "Contact",
-              "payload": "Contact"
-            }, 
-            {
-              "type": "postback",
-              "title": "Social media",
-              "payload": "Social media"
-            },
-            {
-              "type": "postback",
-              "title": "Matthew's bio",
-              "payload": "bio"
-            }
-            ]
-          }, 
-          { 
-            "title": "Custom Examples",
-            "subtitle": "A few small apps to give an idea of the possibilites",
-            "item_url": "https://dynamic-memory.com",
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/danger-man-at-work-hi.png",
-            "buttons": [
-            {
-              "type": "postback",
-              "title": "Tell me a joke 😜",
-              "payload": "joke"
-            },
-            {
-              "type": "postback",
-              "title": "Random Image",
-              "payload": "image"
-            },
-            {
-              "type": "postback",
-              "title": "Who am I?",
-              "payload": "who"
-            }
-            ]
-          },
-          { 
-            "title": "Bot Examples",
-            "subtitle": "Some great bots",
-            "item_url": "https://developers.facebook.com/products/messenger/",
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/example.jpeg",
-            "buttons": [
-            {
-              "type": "web_url",
-              "url": "https://www.messenger.com/t/HealthTap",
-              "title": "Health Tap"
-            },
-            {
-              "type": "web_url",
-              "url": "http://www.messenger.com/t/EstherBot",
-              "title": "Esther's cool bot"
-            },
-            {
-              "type": "web_url",
-              "url": "http://www.messenger.com/t/techcrunch",
-              "title": "TechCrunch news bot"
-            }
-            ]
+            "title": "النجم سبورت",
+            "subtitle": "صلحبك بتاع الكورة يا نجم :*",
+            "item_url": "https://www.youtube.com/channel/UC8ki89XEZR4BLbEXJZ4olhQ",               
+            "image_url": "https://scontent-cai1-1.xx.fbcdn.net/v/t34.0-12/18518861_1667676373261716_1489762969_n.gif?oh=ca9f4c37e93cf97b22182b4fb6c89e0c&oe=591BA032",
           }
+          
           ]
         }
       }
