@@ -387,7 +387,7 @@ function handleReceivedMessage(event) {
     switch (messageText.toLowerCase()) {
       
 
-      case 'hello';
+      case 'hello':
         sendTextMessage(senderID, "Hello dear");
         break;
 
