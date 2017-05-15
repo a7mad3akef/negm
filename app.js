@@ -388,7 +388,7 @@ function handleReceivedMessage(event) {
       
 
       case 'hello':
-        sendTextMessage(senderID, "Hello dear");
+        sendLiveData(senderID, "Hello dear");
         break;
 
       case 'match1':
