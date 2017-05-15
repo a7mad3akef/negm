@@ -76,7 +76,7 @@ function sendOnTime() {
     (function loop() {
         var now = new Date();
 
-        if (now.getHours() === 18 && now.getMinutes() === 11) {
+        if (now.getHours() === 7 && now.getMinutes() === 0) {
             console.log('morning');
 
             matchSave.find({mtime:'morning'},function(err,data){
@@ -101,7 +101,7 @@ function sendOnTime() {
             // });
             });
             
-        } else if (now.getHours() === 18 && now.getMinutes() === 13) {
+        } else if (now.getHours() === 22 && now.getMinutes() === 0) {
           console.log('midnight');
             matchSave.find({mtime:'midnight'},function(err,data){
               if(err) throw err; 
@@ -824,7 +824,7 @@ function sendGenericMessage(recipientId) {
           "elements": [
           {
             "title": "النجم سبورت",
-            "subtitle": "صلحبك بتاع الكورة يا نجم :*",
+            "subtitle": "صاحبك بتاع الكورة يا نجم :*",
             "item_url": "https://www.youtube.com/channel/UC8ki89XEZR4BLbEXJZ4olhQ",               
             "image_url": "https://scontent-cai1-1.xx.fbcdn.net/v/t34.0-12/18518861_1667676373261716_1489762969_n.gif?oh=ca9f4c37e93cf97b22182b4fb6c89e0c&oe=591BA032",
           }
