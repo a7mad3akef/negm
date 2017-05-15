@@ -32,6 +32,17 @@ var isStopped = false;
 mongoose.connect('mongodb://admin:admin@ds117821.mlab.com:17821/negm')
 
 
+
+// create the schema for the usersID
+var usersSchema = new mongoose.Schema({
+  user : String,
+  usersID :[]
+});
+
+
+var users = mongoose.model('users',usersSchema);
+
+
 // our follow match database handling
 var followSchema = new mongoose.Schema({
   teamId : Number,
@@ -531,6 +542,10 @@ function handleReceivedPostback(event) {
         
       }
       sendLiveData(senderID, greeting);
+      users.update({user: "user" }, { $push: { usersID: senderID }},function(err,data){
+        if(err) throw err;
+        console.log('ID added to database')
+        });
     });
   }else{
     // When a postback is called, we'll send a message back to the sender to 
