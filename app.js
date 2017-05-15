@@ -528,8 +528,9 @@ function handleReceivedPostback(event) {
         var bodyObj = JSON.parse(body);
         name = bodyObj.first_name;
         greeting =   "اهلا يا نجم" + "\n" + name;
-        sendLiveData(senderID, greeting);
+        
       }
+      sendLiveData(senderID, greeting);
     });
   }else{
     // When a postback is called, we'll send a message back to the sender to 
