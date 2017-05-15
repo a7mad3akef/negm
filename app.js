@@ -526,8 +526,8 @@ function handleReceivedPostback(event) {
         console.log("Error getting user's name: " +  error);
       } else {
         var bodyObj = JSON.parse(body);
-        name = bodyObj.first_name;
-        greeting =   "اهلا يا نجم" + "\n" + name;
+        var name = bodyObj.first_name;
+        var greeting =   "اهلا يا نجم" + "\n" + name;
         
       }
       sendLiveData(senderID, greeting);
